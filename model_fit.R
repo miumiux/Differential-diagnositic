@@ -11,7 +11,7 @@ require(reshape2)
 require(MASS)
 library(klaR)
 require(stats)
-setwd("Z:/Yi/Differential_Diagnostic/data")
+setwd("xxxxxxx")
 
 wit_fscore$diag<-relevel(wit_fscore$diag,ref="E")
 #multinomial logistic regression model.
@@ -74,6 +74,12 @@ splom(~pat_fscore[,c("knowSth","outside_body","lighthead","Pain","Amenestia")],g
 
 pairs(~ knowSth+outside_body+lighthead+Pain+Amenestia,col=as.factor(pat_fscore$diag),data=pat_fscore)
 
+
+
+
+######################################################
+#Witness#
+######################################################
 score_mean$dat.Diagnosis<-relevel(score_mean$dat.Diagnosis,ref="E")
 test_sum<-multinom(dat.Diagnosis~loss_l+automitisms_l+Drama_motor_l+pale_l,data=score_mean)
 summary(test_sum)
